@@ -1,5 +1,5 @@
 ---
-- name: provisions owncloud
+- name: Installs Various HashiCorp apps/tools
   hosts: all
   sudo: true
   vars:
