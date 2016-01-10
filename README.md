@@ -8,6 +8,14 @@ Requirements
 
 None
 
+Vagrant
+-------
+
+You can spin up a Vagrant box and test all of these tools out without installing anywhere as well.
+````
+vagrant up
+````
+
 Role Variables
 --------------
 
