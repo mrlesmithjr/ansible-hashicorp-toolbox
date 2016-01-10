@@ -11,7 +11,6 @@ Vagrant.configure(2) do |config|
     hashi.vm.hostname = "hashi"
 
     hashi.vm.network :private_network, ip: "192.168.202.201"
-    hashi.vm.network "forwarded_port", guest: 80, host: 8080
 
     hashi.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
