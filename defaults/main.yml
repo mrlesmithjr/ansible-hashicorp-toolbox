@@ -2,6 +2,9 @@
 # defaults file for ansible-hashicorp-toolbelt
 hashicorp_install_dir: /usr/local/bin/
 hashicorp_tools:
+  - name: consul
+    version: 0.6.1
+    state: present
   - name: nomad
     version: 0.2.3
     state: present
@@ -10,6 +13,9 @@ hashicorp_tools:
     state: present
   - name: packer
     version: 0.8.6
+    state: present
+  - name: serf
+    version: 0.7.0
     state: present
   - name: terraform
     version: 0.6.9
