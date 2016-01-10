@@ -1,7 +1,7 @@
 ---
 - name: debian | downloading HashiCorp tools (i386)
   get_url:
-    url: "{{ hashicorp_url }}/{{ item.name }}/{{ item.version }}/{{ item.name }}_{{ item.version }}_linux_amd64.zip"
+    url: "{{ hashicorp_url }}/{{ item.name }}/{{ item.version }}/{{ item.name }}_{{ item.version }}_linux_386.zip"
     dest: "/opt/{{ item.name }}_{{ item.version }}_linux_386.zip"
     validate_certs: no
   with_items: hashicorp_tools
