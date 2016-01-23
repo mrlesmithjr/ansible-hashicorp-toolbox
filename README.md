@@ -53,12 +53,23 @@ None
 Example Playbook
 ----------------
 
+#### GitHub
 ````
 - hosts: desktops
   sudo: true
   vars:
   roles:
     - role: ansible-hashicorp-toolbox
+  tasks:
+````
+
+#### Galaxy
+````
+- hosts: desktops
+  sudo: true
+  vars:
+  roles:
+    - role: mrlesmithjr.hashicorp-toolbox
   tasks:
 ````
 
