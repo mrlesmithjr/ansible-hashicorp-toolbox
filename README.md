@@ -10,6 +10,11 @@ An [Ansible] role to install various [Hashicorp] utilities
 - [vagrant]
 - [vault]
 
+Build Status
+------------
+
+[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-hashicorp-toolbox.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-hashicorp-toolbox)
+
 Requirements
 ------------
 
