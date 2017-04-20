@@ -76,6 +76,8 @@ Example Playbook
   vars:
   roles:
     - role: ansible-hashicorp-toolbox
+```
+
 License
 -------
 
