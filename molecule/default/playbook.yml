@@ -1,5 +1,5 @@
 ---
-- name: Installs Various HashiCorp apps/tools
+- name: Converge
   hosts: all
   vars:
     hashicorp_tools:

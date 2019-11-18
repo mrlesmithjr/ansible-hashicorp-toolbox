@@ -12,7 +12,7 @@
     deb: "{{ hashicorp_url }}/{{ item['name'] }}/{{ item['version'] }}/{{ item['name'] }}_{{ item['version'] }}_x86_64.deb"
     state: "{{ item['state'] }}"
   become: true
-  with_items: "{{ hashicorp_tools }}"
-  when: >
-    item['name'] == "vagrant" and
-    not ansible_check_mode
+  loop: "{{ hashicorp_tools }}"
+  when:
+    - item['name'] == "vagrant"
+    - not ansible_check_mode

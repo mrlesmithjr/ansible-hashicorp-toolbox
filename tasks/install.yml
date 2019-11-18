@@ -3,13 +3,13 @@
   stat:
     path: "{{ hashicorp_install_dir }}/{{ item['name'] }}"
   register: _hashicorp_tools_installed
-  with_items: "{{ hashicorp_tools }}"
+  loop: "{{ hashicorp_tools }}"
 
 - name: install | Capturing Installed Versions of Tools
   shell: "{{ hashicorp_install_dir }}/{{ item['item']['name'] }} version | awk 'NR==1{ print substr($2,2) }'"
   register: _hashicorp_tools_installed_versions
   changed_when: false
-  with_items: "{{ _hashicorp_tools_installed['results'] }}"
+  loop: "{{ _hashicorp_tools_installed['results'] }}"
   when: item['stat']['exists']
 
 - name: install | Upgrading Existing Tools
@@ -18,13 +18,13 @@
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
   become: true
-  with_items: "{{ _hashicorp_tools_installed_versions['results'] }}"
-  when: >
-    item['item']['item']['name']|lower != "vagrant" and
-    item['item']['item']['state']|lower == "present" and
-    item['item']['stat']['exists'] and
-    (item['stdout'] is defined and
-    item['item']['item']['version'] != item['stdout'])
+  loop: "{{ _hashicorp_tools_installed_versions['results'] }}"
+  when:
+    - item['item']['item']['name']|lower != "vagrant"
+    - item['item']['item']['state']|lower == "present"
+    - item['item']['stat']['exists']
+    - item['stdout'] is defined
+    - item['item']['item']['version'] != item['stdout']
 
 - name: install | Installing Tools
   unarchive:
@@ -32,8 +32,8 @@
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
   become: true
-  with_items: "{{ _hashicorp_tools_installed_versions['results'] }}"
-  when: >
-    item['item']['item']['name']|lower != "vagrant" and
-    item['item']['item']['state']|lower == "present" and
-    not item['item']['stat']['exists']
+  loop: "{{ _hashicorp_tools_installed_versions['results'] }}"
+  when:
+    - item['item']['item']['name']|lower != "vagrant"
+    - item['item']['item']['state']|lower == "present"
+    - not item['item']['stat']['exists']

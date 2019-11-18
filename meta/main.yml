@@ -2,7 +2,7 @@
 galaxy_info:
   author: Larry Smith jr.
   description: An [Ansible] role to install various [Hashicorp] utilities
-  license: license (GPLv2, CC-BY, etc)
+  license: MIT
   min_ansible_version: 1.2
   platforms:
     - name: Ubuntu
@@ -16,6 +16,6 @@ galaxy_info:
         - jessie
         - stretch
 
-  categories:
+  galaxy_tags:
     - development
 dependencies: []
