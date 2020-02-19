@@ -1,7 +1,7 @@
 ---
 galaxy_info:
-  author: Larry Smith jr.
-  description: An [Ansible] role to install various [Hashicorp] utilities
+  author: Larry Smith Jr.
+  description: Ansible role to install various Hashicorp Utils
   license: MIT
   min_ansible_version: 1.2
   platforms:

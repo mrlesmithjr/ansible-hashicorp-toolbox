@@ -5,7 +5,7 @@
   register: _hashicorp_tools_installed
   loop: "{{ hashicorp_tools }}"
 
-- name: install | Capturing Installed Versions of Tools
+- name: install | Capturing Installed Versions of Tools # noqa 306
   shell: "{{ hashicorp_install_dir }}/{{ item['item']['name'] }} version | awk 'NR==1{ print substr($2,2) }'"
   register: _hashicorp_tools_installed_versions
   changed_when: false
@@ -14,7 +14,7 @@
 
 - name: install | Upgrading Existing Tools
   unarchive:
-    src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip"
+    src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip" # noqa 204
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
   become: true
@@ -28,7 +28,7 @@
 
 - name: install | Installing Tools
   unarchive:
-    src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip"
+    src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip" # noqa 204
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
   become: true

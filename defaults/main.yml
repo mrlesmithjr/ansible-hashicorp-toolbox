@@ -5,23 +5,23 @@ hashicorp_install_dir: /usr/local/bin/
 hashicorp_tools:
   []
   # - name: consul
-  #   version: 1.6.2
+  #   version: 1.7.0
   #   state: present
   # - name: nomad
-  #   version: 0.10.1
+  #   version: 0.10.3
   #   state: present
   # - name: packer
-  #   version: 1.4.5
+  #   version: 1.5.4
   #   state: present
   # - name: terraform
-  #   version: 0.12.15
+  #   version: 0.12.20
   #   state: present
   #   #Debian package
   # - name: vagrant
-  #   version: 2.2.6
+  #   version: 2.2.7
   #   state: present
   # - name: vault
-  #   version: 1.3.0
+  #   version: 1.3.2
   #   state: present
 
 hashicorp_url: https://releases.hashicorp.com
