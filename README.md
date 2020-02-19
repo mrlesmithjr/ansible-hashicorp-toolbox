@@ -1,6 +1,6 @@
 # ansible-hashicorp-toolbox
 
-An [Ansible](https://www.ansible.com) role to install various [Hashicorp](https://www.hashicorp.com/) utilities
+Ansible role to install various Hashicorp Utils
 
 - [consul](https://www.consul.io/)
 - [nomad](https://www.nomadproject.io/)
@@ -9,17 +9,26 @@ An [Ansible](https://www.ansible.com) role to install various [Hashicorp](https:
 - [vagrant](https://www.vagrantup.com/)
 - [vault](https://www.vaultproject.io/)
 
+## Build Status
+
+### GitHub Actions
+
+![Molecule Test](https://github.com/mrlesmithjr/ansible-hashicorp-toolbox/workflows/Molecule%20Test/badge.svg)
+
+### Travis CI
+
+[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-hashicorp-toolbox.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-hashicorp-toolbox)
+
 ## Requirements
 
-None
+For any required Ansible roles, review:
+[requirements.yml](requirements.yml)
 
 ## Role Variables
 
 [defaults/main.yml](defaults/main.yml)
 
 ## Dependencies
-
-None
 
 ## Example Playbook
 
@@ -33,6 +42,8 @@ MIT
 
 Larry Smith Jr.
 
-- [EverythingShouldBeVirtual](http://everythingshouldbevirtual.com)
-- [@mrlesmithjr](https://www.twitter.com/mrlesmithjr)
+- [@mrlesmithjr](https://twitter.com/mrlesmithjr)
 - [mrlesmithjr@gmail.com](mailto:mrlesmithjr@gmail.com)
+- [http://everythingshouldbevirtual.com](http://everythingshouldbevirtual.com)
+
+> NOTE: Repo has been created/updated using [https://github.com/mrlesmithjr/cookiecutter-ansible-role](https://github.com/mrlesmithjr/cookiecutter-ansible-role) as a template.
