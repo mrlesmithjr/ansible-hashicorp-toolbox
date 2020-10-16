@@ -1,28 +1,7 @@
 ---
 - name: Converge
   hosts: all
-  vars:
-    hashicorp_tools:
-      - name: consul
-        version: 1.7.0
-        state: present
-      - name: nomad
-        version: 0.10.3
-        state: present
-      - name: packer
-        version: 1.5.4
-        state: present
-      - name: terraform
-        version: 0.12.20
-        state: present
-        #Debian package
-      - name: vagrant
-        version: 2.2.7
-        state: present
-      - name: vault
-        version: 1.3.2
-        state: present
   tasks:
-    - name: "Include ansible-hashicorp-toolbox"
+    - name: Include ansible-hashicorp-toolbox
       include_role:
-        name: "ansible-hashicorp-toolbox"
+        name: ansible-hashicorp-toolbox
