@@ -13,6 +13,7 @@ lint: |
 platforms:
   - name: ubuntu2004
     image: jrei/systemd-ubuntu:20.04
+    pre_build_image: true
     privileged: true
     command: /lib/systemd/systemd
     # tmpfs:

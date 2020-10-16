@@ -13,6 +13,7 @@ lint: |
 platforms:
   - name: ubuntu1804
     image: jrei/systemd-ubuntu:18.04
+    pre_build_image: true
     privileged: true
     command: /lib/systemd/systemd
     # tmpfs:

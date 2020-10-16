@@ -13,6 +13,7 @@ lint: |
 platforms:
   - name: debian8
     image: jrei/systemd-debian:8
+    pre_build_image: true
     privileged: true
     command: /lib/systemd/systemd
     # tmpfs:

@@ -13,6 +13,7 @@ lint: |
 platforms:
   - name: fedora
     image: jrei/systemd-fedora
+    pre_build_image: true
     privileged: true
     command: /usr/sbin/init
     # tmpfs:
