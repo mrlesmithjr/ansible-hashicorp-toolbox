@@ -2,7 +2,7 @@
 - hosts: all
   gather_facts: false
   tasks:
-  - name: Ensure Python3 is Installed
+  - name: Ensure Python3 is Installed # noqa 301
     raw: |
       if [ -f /etc/debian_version ]; then
         if [ ! -f /usr/bin/python3 ]; then
@@ -28,4 +28,3 @@
         state: present
       become: true
       become_method: su
-

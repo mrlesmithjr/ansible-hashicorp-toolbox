@@ -39,6 +39,7 @@
     src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip" # noqa 204
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
+    mode: u=rwx,g=rx,o=rx
   become: true
   loop: "{{ _hashicorp_tools_installed_versions['results'] }}"
   when:
@@ -52,6 +53,7 @@
     src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip" # noqa 204
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
+    mode: u=rwx,g=rx,o=rx
   become: true
   loop: "{{ _hashicorp_tools_installed_versions['results'] }}"
   when:
