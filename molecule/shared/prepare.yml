@@ -9,9 +9,9 @@
       when: ansible_os_family == "Debian"
 
     - name: Ensure sudo Package is Installed
-      apt:
+      package:
         name: sudo
         state: present
       become: true
       become_method: su
-      when: ansible_os_family == "Debian"
+
