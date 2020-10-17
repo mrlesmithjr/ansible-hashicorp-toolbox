@@ -36,10 +36,10 @@ centos8:
 #   script:
 #     - molecule test --scenario-name debian8
 
-debian9:
-  stage: molecule-test
-  script:
-    - molecule test --scenario-name debian9
+# debian9:
+#   stage: molecule-test
+#   script:
+#     - molecule test --scenario-name debian9
 
 debian10:
   stage: molecule-test
