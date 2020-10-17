@@ -1,13 +1,3 @@
 # tasks file for ansible-hashicorp-toolbelt
-- include_tasks: debian.yml
-  when:
-    - ansible_os_family == "Debian" or ansible_os_family == "elementary OS"
-    - hashicorp_tools != []
-
-- include_tasks: redhat.yml
-  when:
-    - ansible_os_family == "RedHat"
-    - hashicorp_tools != []
-
 - include_tasks: install.yml
   when: hashicorp_tools != []
