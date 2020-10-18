@@ -11,11 +11,11 @@ lint: |
   ansible-lint
   flake8
 platforms:
-  - name: fedora
-    image: jrei/systemd-fedora
+  - name: ubuntu2004
+    image: jrei/systemd-ubuntu:20.04
     pre_build_image: true
     privileged: true
-    command: /usr/sbin/init
+    command: /lib/systemd/systemd
     # tmpfs:
     #   - /run
     #   - /tmp

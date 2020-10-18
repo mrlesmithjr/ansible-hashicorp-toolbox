@@ -1,0 +1,30 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+  - name: Ensure Python3 is Installed # noqa 301
+    raw: |
+      if [ -f /etc/debian_version ]; then
+        if [ ! -f /usr/bin/python3 ]; then
+          apt-get update
+          apt-get install -y python3
+        fi
+      fi
+    become: true
+    become_method: su
+
+- hosts: all
+  tasks:
+    - name: Update Apt Cache
+      apt:
+        update_cache: true
+      become: true
+      become_method: su
+      when: ansible_os_family == "Debian"
+
+    - name: Ensure sudo Package is Installed
+      package:
+        name: sudo
+        state: present
+      become: true
+      become_method: su

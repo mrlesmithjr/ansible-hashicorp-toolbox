@@ -1,5 +1,7 @@
 ---
 - name: Example Playbook
   hosts: all
-  roles:
-    - role: ansible-hashicorp-toolbox
+  tasks:
+    - name: Include ansible-hashicorp-toolbox
+      include_role:
+        name: ansible-hashicorp-toolbox

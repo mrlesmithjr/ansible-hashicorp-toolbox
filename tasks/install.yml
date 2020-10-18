@@ -1,4 +1,26 @@
 ---
+- name: install | Ensuring unzip is Installed
+  package:
+    name: unzip
+    state: present
+  become: true
+
+- name: install | Installing Pre-Reqs
+  apt:
+    name:
+    - libfuse2
+    state: present
+  become: true
+  when: ansible_os_family == "Debian"
+
+- name: install | Installing Pre-Reqs
+  package:
+    name:
+    - fuse-libs
+    state: present
+  become: true
+  when: ansible_os_family == "RedHat"
+
 - name: install | Checking For Previously Installed Tools
   stat:
     path: "{{ hashicorp_install_dir }}/{{ item['name'] }}"
@@ -17,10 +39,10 @@
     src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip" # noqa 204
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
+    mode: u=rwx,g=rx,o=rx
   become: true
   loop: "{{ _hashicorp_tools_installed_versions['results'] }}"
   when:
-    - item['item']['item']['name']|lower != "vagrant"
     - item['item']['item']['state']|lower == "present"
     - item['item']['stat']['exists']
     - item['stdout'] is defined
@@ -31,9 +53,9 @@
     src: "{{ hashicorp_url }}/{{ item['item']['item']['name'] }}/{{ item['item']['item']['version'] }}/{{ item['item']['item']['name'] }}_{{ item['item']['item']['version'] }}_{{ ansible_system|lower }}_amd64.zip" # noqa 204
     dest: "{{ hashicorp_install_dir }}"
     remote_src: true
+    mode: u=rwx,g=rx,o=rx
   become: true
   loop: "{{ _hashicorp_tools_installed_versions['results'] }}"
   when:
-    - item['item']['item']['name']|lower != "vagrant"
     - item['item']['item']['state']|lower == "present"
     - not item['item']['stat']['exists']
