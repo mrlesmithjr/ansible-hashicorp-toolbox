@@ -2,12 +2,14 @@
 
 Ansible role to install various Hashicorp Utils
 
+- [Boundary](https://www.boundaryproject.io/)
 - [consul](https://www.consul.io/)
 - [nomad](https://www.nomadproject.io/)
 - [packer](https://www.packer.io/)
 - [terraform](https://www.terraform.io/)
 - [vagrant](https://www.vagrantup.com/)
 - [vault](https://www.vaultproject.io/)
+- [Waypoint](https://www.waypointproject.io/)
 
 ## Build Status
 
